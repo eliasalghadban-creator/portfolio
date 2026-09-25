@@ -1,0 +1,408 @@
+
+/* Farben der Website */
+
+:root {
+  --bg: #E6E6E6;
+  --panel: white;
+  --fg: #141414;
+  --muted: #666666;
+  --line: black;
+  --accent: #EFEFEF;
+  color-scheme: light;
+}
+
+/* Dunkler Modus */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101010;
+    --panel: #1A1A1A;
+    --fg: #E8E8E8;
+    --muted: #9A9A9A;
+    --line: #444444;
+    --accent: #242424;
+    color-scheme: dark;
+  }
+}
+
+
+/* Allgemeines */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.65;
+}
+
+
+/* Ganze Seite */
+
+.seite {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 14px 28px;
+}
+
+
+/* Kopfbereich */
+
+.kopf {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-top: none;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 4px 4px 0 var(--line);
+}
+
+.kopftext {
+  padding: 26px;
+}
+
+.kleineueberschrift {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 3px 9px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.untertitel {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+
+/* Aufteilung in drei Spalten */
+
+.aufteilung {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 240px;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: start;
+}
+
+
+/* Kästen */
+
+.kasten {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  margin-bottom: 16px;
+  min-width: 0;
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+.kasten:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--line);
+}
+
+.kasten h2 {
+  margin: 0;
+  padding: 7px 10px;
+  background: black;
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.inhalt {
+  padding: 13px 14px;
+  overflow-wrap: anywhere;
+}
+
+
+/* Tabellen */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+td {
+  padding: 7px 4px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.grau {
+  color: var(--muted);
+}
+
+
+/* Listen */
+
+ul.liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.liste li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+ul.liste li:last-child {
+  border-bottom: none;
+}
+
+
+/* Kenntnisse */
+
+.kenntnis {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.kenntnis:last-child {
+  border-bottom: none;
+}
+
+.kenntnis span:last-child {
+  color: var(--muted);
+  text-align: right;
+}
+
+
+/* Text */
+
+.einleitung {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.letzterabsatz {
+  margin-bottom: 0;
+}
+
+.klein {
+  font-size: 12px;
+}
+
+.rechts {
+  float: right;
+  color: #BBBBBB;
+  font-size: 9px;
+}
+
+
+/* Projekte */
+
+.projekt {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 5px;
+  align-items: start;
+}
+
+.nummer {
+  font: 16px "Courier New", monospace;
+  color: var(--muted);
+  border-right: 1px solid var(--line);
+  padding-right: 8px;
+}
+
+.projekt b {
+  font-size: 13px;
+}
+
+.projekt p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.projekt small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.status {
+  font: 9px "Courier New", monospace;
+  border: 1px solid var(--line);
+  padding: 3px 5px;
+  background: var(--accent);
+}
+
+
+/* Tags */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tags span {
+  border: 1px solid var(--line);
+  background: var(--accent);
+  padding: 4px 6px;
+  font-size: 10px;
+}
+
+.tags span:hover {
+  background: var(--line);
+  color: var(--panel);
+}
+
+
+/* Uhr */
+
+.uhrzeit {
+  font-size: 26px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+.datum {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+
+/* Fußbereich */
+
+.fuss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  background: black;
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  padding: 9px 12px;
+  margin-top: 4px;
+  border: 2px solid black;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+
+  .aufteilung {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .aufteilung > aside:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14px;
+  }
+
+}
+
+
+/* Handy */
+
+@media (max-width: 680px) {
+
+  .seite {
+    padding: 0 8px 20px;
+  }
+
+  .kopf {
+    box-shadow: 2px 2px 0 var(--line);
+  }
+
+  .kopftext {
+    padding: 20px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .untertitel {
+    font-size: 11px;
+  }
+
+  .aufteilung {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .aufteilung > aside,
+  .aufteilung > section {
+    width: 100%;
+  }
+
+  .aufteilung > aside:last-child {
+    display: block;
+  }
+
+  .kasten {
+    box-shadow: 2px 2px 0 var(--line);
+  }
+
+  .kasten:hover {
+    transform: none;
+    box-shadow: 2px 2px 0 var(--line);
+  }
+
+  .projekt {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .status {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .fuss {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 10px;
+  }
+
+}
