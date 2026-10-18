@@ -292,21 +292,6 @@ ul.liste li:last-child {
 }
 
 
-/* Uhr */
-
-.uhrzeit {
-  font-size: 26px;
-  font-family: "Courier New", monospace;
-  font-weight: bold;
-}
-
-.datum {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
-
 /* Fußbereich */
 
 .fuss {
